@@ -6,6 +6,7 @@ resource "aws_instance" "pathfinder-character-tool" {
   instance_type        = "t2.small"
   subnet_id            = "${element(data.terraform_remote_state.dev_vpc.public_subnet_ids, 1)}"
   user_data            = "${file("../bootstrap-instance.sh")}"
+  vpc_security_group_ids    = ["${data.terraform_remote_state.dev_vpc.base_security_group_id}", "${aws_security_group.pathfinder-character-tool.id}"]
 
   tags {
     Name = "${lower(data.terraform_remote_state.dev_vpc.vpc_name)}-pathfinder-character-tool"
