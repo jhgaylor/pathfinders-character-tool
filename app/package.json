@@ -1,6 +1,6 @@
 {
   "name": "pathfinder-character-tool",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A api and web interface to make working with a pathfinder character simple.",
   "main": "index.js",
   "scripts": {
