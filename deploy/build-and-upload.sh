@@ -32,4 +32,7 @@ pushd $PROJECT_ROOT_DIR > /dev/null
   echo "Uploading artifact ${ARTIFACT_PATH} to ${APP_S3_PATH}"
   aws s3 cp ${ARTIFACT_PATH} ${APP_S3_PATH}
   echo "Finished uploading artifact to ${APP_S3_PATH}"
+
+  rm ${ARTIFACT_PATH}
+  echo "Removed the artifact."
 popd > /dev/null
