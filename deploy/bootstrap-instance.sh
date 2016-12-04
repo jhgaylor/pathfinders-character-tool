@@ -10,17 +10,19 @@ PUBLIC_IP=$(curl http://169.254.169.254/latest/meta-data/public-ipv4 -s)
 KEY_NAME=$(curl http://169.254.169.254/latest/meta-data/public-keys/ -s | cut -d= -f2)
 ARTIFACT_PATH=/tmp/${APP}-${VERSION}.tar.gz
 
-AWS_CONFIGURATION="""
+mkdir /root/.aws/
+echo """
 [default]
 output = json
 region = us-west-2
-"""
-
-mkdir /root/.aws/
-echo ${AWS_CONFIGURATION} > /root/.aws/config
+""" > /root/.aws/config
 
 install -g ubuntu -o ubuntu -d  /home/ubuntu/.aws/
-echo ${AWS_CONFIGURATION} > /home/ubuntu/.aws/config
+echo """
+[default]
+output = json
+region = us-west-2
+""" > /home/ubuntu/.aws/config
 
 apt-get update
 apt-get install python-pip python-dev build-essential -y
@@ -75,4 +77,4 @@ echo """
  
 """
 
-aws sns publish --phone-number +16626940191 --message "http://${PUBLIC_DNS}:3000 is ready."
+aws sns publish --phone-number +16626940191 --message "Ready: http://${PUBLIC_HOSTNAME}:3000"
