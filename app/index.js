@@ -1,3 +1,4 @@
+var package_info = require('package.json')
 var express = require('express')
 var app = express()
 
@@ -6,7 +7,10 @@ app.get('/', function (req, res) {
 })
 
 app.get('/health', function (req, res) {
-  res.send({healthy: true})
+  res.send({
+    healthy: true,
+    version: package_info.version
+  })
 })
 
 app.listen(3000, function () {
