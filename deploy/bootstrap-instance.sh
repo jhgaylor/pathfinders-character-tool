@@ -2,7 +2,7 @@
 set -e
 
 APP=pathfinder-character-tool
-VERSION=0.0.1
+VERSION=0.0.2
 APP_PATH=/opt/${APP}
 START_SCRIPT_PATH=${APP_PATH}/start.sh
 PUBLIC_HOSTNAME=$(curl http://169.254.169.254/latest/meta-data/public-hostname -s)
