@@ -1,7 +1,7 @@
 # Goals
 
-- [ ] "build pipeline" that deposits release into s3
-- [ ] Deploy to aws
+- [x] "build pipeline" that deposits release into s3
+- [x] Deploy to aws
 - [ ] Deploy with nginx in front
 - [ ] Deploy in a resilient fashion
 - [ ] Add ecmascript 2016

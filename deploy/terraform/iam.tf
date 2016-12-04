@@ -9,6 +9,12 @@ resource "aws_iam_role_policy" "pathfinder-character-tool" {
   policy = "${data.terraform_remote_state.core.policy-read-sw-releases}"
 }
 
+resource "aws_iam_role_policy" "pathfinder-character-tool-sns" {
+  name   = "${data.terraform_remote_state.dev_vpc.vpc_name}-pathfinder-character-tool-sns"
+  role   = "${aws_iam_role.pathfinder-character-tool.id}"
+  policy = "${data.terraform_remote_state.core.policy-send-sms}"
+}
+
 resource "aws_iam_instance_profile" "pathfinder-character-tool" {
   name  = "${data.terraform_remote_state.dev_vpc.vpc_name}-pathfinder-character-tool"
   roles = ["${aws_iam_role.pathfinder-character-tool.name}"]

@@ -64,16 +64,14 @@ end script
 sudo start ${APP}
 
 echo """
-Congrats. You have an app server up.
-
-ssh ubuntu@${PUBLIC_HOSTNAME} -i ~/.ssh/KEY
-
-
-1. Configure the database @ ${DB_ENDPOINT} using 
-   
-   psql -h ${DB_ENDPOINT} -p 5432 -U politiloc -W politiloc
-
-2. Start the app using ${START_SCRIPT_PATH}
+            _
+           /(|
+          (  :
+         __\  \_______
+       (____)   |
+      (____)|   |
+       (____).__|
+        (___)__.|_____
 """
 
-# aws sns publish --phone-number +16626940191 --message "${PUBLIC_IP} is ready. ssh ubuntu@${PUBLIC_HOSTNAME} -i ~/.ssh/${KEY_NAME}"
+aws sns publish --phone-number +16626940191 --message "http://${PUBLIC_IP}:3000 is ready. ssh ubuntu@${PUBLIC_HOSTNAME} -i ~/.ssh/${KEY_NAME}"
