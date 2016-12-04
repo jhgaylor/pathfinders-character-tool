@@ -74,7 +74,6 @@ echo """
       (____)|   |
        (____).__|
         (___)__.|_____
- 
 """
 
 aws sns publish --phone-number +16626940191 --message "Ready: http://${PUBLIC_HOSTNAME}:3000"
