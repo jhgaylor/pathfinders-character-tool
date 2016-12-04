@@ -72,6 +72,7 @@ echo """
       (____)|   |
        (____).__|
         (___)__.|_____
+ 
 """
 
 aws sns publish --phone-number +16626940191 --message "http://${PUBLIC_IP}:3000 is ready. ssh ubuntu@${PUBLIC_HOSTNAME} -i ~/.ssh/${KEY_NAME}"
