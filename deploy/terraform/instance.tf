@@ -4,7 +4,7 @@ resource "aws_instance" "pathfinder-character-tool" {
 
   iam_instance_profile = "${aws_iam_instance_profile.pathfinder-character-tool.name}"
   instance_type        = "t2.small"
-  subnet_id            = "${element(data.terraform_remote_state.dev_vpc.private_subnet_ids, 1)}"
+  subnet_id            = "${element(data.terraform_remote_state.dev_vpc.public_subnet_ids, 1)}"
   user_data            = "${file("../bootstrap-instance.sh")}"
 
   tags {
