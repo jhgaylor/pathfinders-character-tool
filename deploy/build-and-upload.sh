@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 APP_NAME="pathfinder-character-tool"
 SW_RELEASE_BUCKET="jhg-sw-releases"
@@ -16,19 +15,21 @@ if [ ! -e "${PROJECT_ROOT_DIR}deploy/build-and-upload.sh" ]; then
 fi
 
 
-pushd $PROJECT_ROOT_DIR
+pushd $PROJECT_ROOT_DIR > /dev/null
   echo "Building App"
   if [ -e "${ARTIFACT_PATH}" ]; then
     rm ${ARTIFACT_PATH}
   fi
 
   tar -czf ${ARTIFACT_PATH} ${SOURCE_DIR} > /dev/null
-
+  echo "App successfully built"
   ARTIFACT_EXISTS_AWS=$(aws s3 ls ${APP_S3_PATH})
-  if [ ! -z "${ARTIFACT_EXISTS_AWS}" ]; then
-    echo "This file exists in s3 already. Cancel this script with ^C within 10s or it will be overwritten."
-    sleep 10
-  fi
-  aws s3 cp ${ARTIFACT_PATH} ${APP_S3_PATH}
 
-popd
+  if [ ! -z "${ARTIFACT_EXISTS_AWS}" ]; then
+    echo "This file exists in s3 already. Cancel this script with ^C within 5s or it will be overwritten."
+    sleep 5
+  fi
+  echo "Uploading artifact ${ARTIFACT_PATH} to ${APP_S3_PATH}"
+  aws s3 cp ${ARTIFACT_PATH} ${APP_S3_PATH}
+  echo "Finished uploading artifact to ${APP_S3_PATH}"
+popd > /dev/null
