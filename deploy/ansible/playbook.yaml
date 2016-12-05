@@ -1,3 +1,4 @@
+# bootstrap the instances to have python for ansible to run modules
 - hosts: tag_App_pathfinder_character_tool
   gather_facts: false
   tasks:
