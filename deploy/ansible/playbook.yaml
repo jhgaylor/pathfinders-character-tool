@@ -1,11 +1,12 @@
 # bootstrap the instances to have python for ansible to run modules
-- hosts: tag_App_pathfinder_character_tool
-  gather_facts: false
-  tasks:
-    - name: Install Python
-      raw: "apt-get -y -q install python"
-      become: true
+# - hosts: tag_App_pathfinder_character_tool
+#   gather_facts: false
+#   tasks:
+#     - name: Install Python
+#       raw: "apt-get -y -q install python"
+#       become: true
+#       become_method: "sudo"
 
-- hosts: tag_App_pathfinder_character_tool
+- hosts: all
   roles:
     - app

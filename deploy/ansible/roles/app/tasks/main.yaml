@@ -1,2 +1,2 @@
 - name: Say Hello
-  shell: "echo 'hello'"
+  shell: "echo 'hello' > /tmp/hello"
