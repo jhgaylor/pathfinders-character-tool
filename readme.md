@@ -10,6 +10,7 @@
 - [ ] Remove ansible in favor of packer
 - [ ] Deploy with nginx in front (or elb?!)
 - [ ] TF a hosted database service (rds psql? nosql?)
+- [ ] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
 
 **Coding**
 
