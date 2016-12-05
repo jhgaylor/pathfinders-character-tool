@@ -1,4 +1,4 @@
 node_modules/
 *.tar.gz
 plan
-.terraform/
+.terraform/playbook.retry
