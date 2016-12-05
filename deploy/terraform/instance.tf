@@ -5,6 +5,7 @@ resource "aws_instance" "pathfinder-character-tool" {
   instance_type          = "${var.instance_type}"
   subnet_id              = "${element(data.terraform_remote_state.dev_vpc.public_subnet_ids, 1)}"
   # count                  = 0
+  # we need the user data to get the box into shape for the ansible provisioner, which is poorly maintained at the time of writing.
   user_data              = "${file("../bootstrap-instance.sh")}"
   vpc_security_group_ids = [
     "${data.terraform_remote_state.dev_vpc.base_security_group_id}",
@@ -27,8 +28,10 @@ resource "aws_instance" "pathfinder-character-tool" {
     playbook = "../ansible/playbook.yaml"
     groups = ["all"] # these get created and shoved in the inventory. they don't really mean much. needs to match the playbook.
     hosts = ["all"] # these get created and shoved in the inventory. they don't really mean much. needs to match the playbook.
-    # extra_vars = {
-    #   "env": "terraform"  
+    # extra_vars {
+    #   region = "us-west-2"
+    #   app_version = "0.0.3"
+    #   app_name = "pathfinder-character-tool"
     # }
   }
 }

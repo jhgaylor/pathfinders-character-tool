@@ -32,6 +32,6 @@ Now I can run playbooks with `aap playbook.yaml`.
 
 # Init roles
 
-`ansible-galaxy install -r install_roles.yaml`
+Run this from ./ relative to this readme. It should only be necessary if you want to bump the version, as the roles are check into source control so they don't get ripped out from under our feet.
 
-Use sudo or set ANSIBLE_ROLES_PATH to somewhere you have permissions with your current user
+`ANSIBLE_ROLES_PATH=./roles ansible-galaxy install -r install_roles.yaml`
