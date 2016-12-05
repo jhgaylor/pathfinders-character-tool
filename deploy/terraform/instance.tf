@@ -12,6 +12,7 @@ resource "aws_instance" "pathfinder-character-tool" {
     Name = "${lower(data.terraform_remote_state.dev_vpc.vpc_name)}-pathfinder-character-tool"
     App  = "pathfinder-character-tool"
     Env  = "development"
+    Owner = "jake"
   }
 }
 
