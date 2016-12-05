@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+# ubuntu 14's ssl something or another needs upgrading to work with the ansible provisioner
+# http://stackoverflow.com/questions/29134512/insecureplatformwarning-a-true-sslcontext-object-is-not-available-this-prevent
 apt-get install libffi-dev libssl-dev -y
 # APP=pathfinder-character-tool
 # VERSION=0.0.3
