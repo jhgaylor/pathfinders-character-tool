@@ -29,3 +29,9 @@ alias aansible-playbook=aap
 ```
 
 Now I can run playbooks with `aap playbook.yaml`.
+
+# Init roles
+
+`ansible-galaxy install -r install_roles.yaml`
+
+Use sudo or set ANSIBLE_ROLES_PATH to somewhere you have permissions with your current user

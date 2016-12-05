@@ -1,0 +1,6 @@
+---
+app_name: pathfinder-character-tool
+app_dir: /opt/{{app_name}}
+app_version: "0.0.3"
+artifact_path: /tmp/{{app_name}}-{{app_version}}.tar.gz
+sw_releases_bucket: jhg-sw-releases

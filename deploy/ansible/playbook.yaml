@@ -7,6 +7,14 @@
 #       become: true
 #       become_method: "sudo"
 
-- hosts: all
+# hosts is really just the local instance since it is being called through the provider
+- hosts: tag_App_pathfinder_character_tool
+  vars:
+    nodejs_version: "6.x"
+  roles:
+    - geerlingguy.nodejs
+
+- hosts: tag_App_pathfinder_character_tool
   roles:
     - app
+
