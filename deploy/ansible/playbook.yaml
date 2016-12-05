@@ -1,0 +1,10 @@
+- hosts: tag_App_pathfinder_character_tool
+  gather_facts: false
+  tasks:
+    - name: Install Python
+      raw: "apt-get -y -q install python"
+      become: true
+
+- hosts: tag_App_pathfinder_character_tool
+  roles:
+    - app
