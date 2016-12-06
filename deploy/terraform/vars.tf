@@ -10,8 +10,8 @@ variable "key_pair_name" {
   default = "jake-laptop-aws"
 }
 
-variable "base_ami_id" {
-  default = "ami-d2d27bb2"
+variable "app_ami_id" {
+  default = "ami-1947ef79"
 }
 
 variable "instance_type" {

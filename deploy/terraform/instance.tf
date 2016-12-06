@@ -1,5 +1,5 @@
 resource "aws_instance" "pathfinder-character-tool" {
-  ami                    = "${var.base_ami_id}"
+  ami                    = "${var.app_ami_id}"
   key_name               = "${var.key_pair_name}"
   iam_instance_profile   = "${aws_iam_instance_profile.pathfinder-character-tool.name}"
   instance_type          = "${var.instance_type}"
