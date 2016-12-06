@@ -1,3 +1,9 @@
+# Process
+
+- Dev on `app/`
+- from the root of the project, run `./deploy/build-and-upload.sh` which will create the artifact, stuff it onto s3, and then make an ami with the app loaded on it.
+- to deploy, stick the new ami id into terraform, and run terraform plan & apply
+
 # Goals
 
 
