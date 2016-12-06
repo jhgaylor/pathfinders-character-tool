@@ -11,7 +11,7 @@ variable "key_pair_name" {
 }
 
 variable "app_ami_id" {
-  default = "ami-1947ef79"
+  default = "ami-4045ed20"
 }
 
 variable "instance_type" {
@@ -20,4 +20,8 @@ variable "instance_type" {
 
 variable "subdomain" {
   default = "pct"
+}
+
+variable "instance_count" {
+  default = 0
 }
