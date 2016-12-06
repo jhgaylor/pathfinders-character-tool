@@ -1,7 +1,7 @@
 ---
 app_name: pathfinder-character-tool
 app_dir: /opt/{{app_name}}
-app_version: "0.0.3"
+app_version: "0.0.4"
 fqdn: pct.opslab.xzy
 artifact_path: /tmp/{{app_name}}-{{app_version}}.tar.gz
 sw_releases_bucket: jhg-sw-releases
