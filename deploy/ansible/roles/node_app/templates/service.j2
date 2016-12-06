@@ -1,0 +1,11 @@
+description "{{app_name}} Service"
+author "Jake Gaylor"
+
+start on runlevel [3]
+stop on shutdown
+
+# If the process quits unexpectadly trigger a respawn
+respawn
+
+# Start the process
+exec start-stop-daemon --start --chuid ubuntu --make-pidfile --pidfile {{app_dir}}/node-upstart.pid --exec /usr/bin/node -- {{app_dir}}/app/index.js >> /var/log/{{app_name}}.log 2>&1
