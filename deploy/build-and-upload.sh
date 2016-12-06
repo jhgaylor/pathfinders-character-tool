@@ -2,7 +2,7 @@
 
 APP_NAME="pathfinder-character-tool"
 SW_RELEASE_BUCKET="jhg-sw-releases"
-PROJECT_ROOT_DIR="${0%/*}/../"
+PROJECT_ROOT_DIR="./"
 SOURCE_DIR="${PROJECT_ROOT_DIR}app"
 APP_VERSION=$(node -p -e "require('${SOURCE_DIR}/package.json').version")
 ARTIFACT_FILENAME="${APP_NAME}-${APP_VERSION}.tar.gz"
