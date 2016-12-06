@@ -17,6 +17,25 @@
   become_method: "sudo"
 
 - hosts: tag_App_pathfinder_character_tool
+  vars:
+    nginx_remove_default_vhost: true
+    nginx_vhosts:
+      - listen: "80"
+        server_name: "{{fqdn}}"
+        extra_parameters: |
+          location / {
+              proxy_pass http://localhost:3000;
+              proxy_http_version 1.1;
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection 'upgrade';
+              proxy_set_header Host $host;
+              proxy_cache_bypass $http_upgrade;
+          }
+  roles:
+    - geerlingguy.nginx
+  become: true
+
+- hosts: tag_App_pathfinder_character_tool
   roles:
     - node_app
   become: true

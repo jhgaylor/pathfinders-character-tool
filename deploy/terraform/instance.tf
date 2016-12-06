@@ -27,7 +27,7 @@ resource "aws_instance" "pathfinder-character-tool" {
 
     playbook = "../ansible/playbook.yaml"
     groups = ["all"] # these get created and shoved in the inventory. they don't really mean much. needs to match the playbook.
-    hosts = ["all"] # these get created and shoved in the inventory. they don't really mean much. needs to match the playbook.
+    hosts = ["all", "tag_App_pathfinder_character_tool"] # these get created and shoved in the inventory. they don't really mean much. needs to match the playbook.
     # extra_vars {
     #   region = "us-west-2"
     #   app_version = "0.0.3"
