@@ -1,75 +1,10 @@
 ---
 
-- file:
-    path: /root/.aws/config
-    state: directory
-    owner: root
-    group: root
-    mode: 0644
+- include: _awscli.yaml
 
-- template:
-    src: aws-config.j2
-    dest: /root/.aws/config
-    owner: root
-    group: root
-    mode: 0644
+- include: _deploy_artifact.yaml
 
-- file:
-    path: /home/ubuntu/.aws/config
-    state: directory
-    owner: ubuntu
-    group: ubuntu
-    mode: 0644
-
-- template:
-    src: aws-config.j2
-    dest: /home/ubuntu/.aws/config
-    owner: ubuntu
-    group: ubuntu
-    mode: 0644
-
-- pip:
-    name: awscli
-
-- file:
-    path: "{{app_dir}}"
-    state: directory
-    owner: ubuntu
-    group: ubuntu
-    mode: 0744
-
-- pip:
-    name: boto
-
-- name: Get artifact
-  s3:
-    bucket: "{{sw_releases_bucket}}"
-    object: "/{{app_name}}/{{app_name}}-{{app_version}}.tar.gz"
-    dest: "{{artifact_path}}"
-    mode: get
-
-# Still a little buggy. The code below works
-# tar -zPxf {{artifact_path}} -C {{app_dir}}
-# chown ubuntu:ubuntu -R ${APP_PATH}
-- unarchive:
-    remote_src: yes
-    src: "{{artifact_path}}"
-    dest: "{{app_dir}}"
-    owner: ubuntu
-    group: ubuntu
-
-- template:
-    src: service.j2
-    dest: "/etc/init/{{app_name}}.conf"
-    owner: root
-    group: root
-    mode: 0644
-
-- service:
-    name: "{{app_name}}"
-    state: started
-    enabled: yes
-
+# - include: _notify_via_sms.yaml
 # - name: Send notification messages via SNS with short message for SMS
 #   local_action:
 #     module: sns
@@ -77,6 +12,5 @@
 #     sms: "deployed!"
 #     subject: "Deploy complete!"
 #     topic: "deploy"
-
 # aws sns publish --phone-number +16626940191 --message "Ready: http://${PUBLIC_HOSTNAME}:3000"
 

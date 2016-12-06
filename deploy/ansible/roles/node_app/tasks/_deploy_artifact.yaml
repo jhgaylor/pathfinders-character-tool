@@ -1,0 +1,35 @@
+- pip:
+    name: boto
+
+- file:
+    path: "{{app_dir}}"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: 0744
+
+- name: Get artifact
+  s3:
+    bucket: "{{sw_releases_bucket}}"
+    object: "/{{app_name}}/{{app_name}}-{{app_version}}.tar.gz"
+    dest: "{{artifact_path}}"
+    mode: get
+
+- unarchive:
+    remote_src: yes
+    src: "{{artifact_path}}"
+    dest: "{{app_dir}}"
+    owner: ubuntu
+    group: ubuntu
+
+- template:
+    src: service.j2
+    dest: "/etc/init/{{app_name}}.conf"
+    owner: root
+    group: root
+    mode: 0644
+
+- service:
+    name: "{{app_name}}"
+    state: started
+    enabled: yes
