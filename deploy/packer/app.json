@@ -1,0 +1,23 @@
+{
+  "builders": [{
+    "type": "amazon-ebs",
+    "source_ami": "ami-d1d27bb1",
+    "region": "us-west-2",
+    "instance_type": "m1.small",
+    "ssh_username": "ubuntu",
+    "ssh_keypair_name": "jake-laptop-aws",
+    "ssh_private_key_file": "/Users/jake/.ssh/jake-laptop-aws.pem",
+    "ami_name": "pathfinder-character-tool-{{timestamp}}"
+  }],
+  "provisioners": [{
+      "type": "shell",
+      "execute_command": "sudo -S -E bash '{{.Path}}'",
+      "script": "scripts/setup.sh"
+    }, {
+    "type": "ansible-local",
+    "playbook_file": "../ansible/playbook.yaml",
+    "extra_arguments": [ 
+      "--extra-vars \"app_version={{user `app_version`}} app_name=pathfinder-character-tool fqdn=pct.opslab.xyz\""
+    ]
+  }]
+}
