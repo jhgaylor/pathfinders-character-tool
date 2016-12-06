@@ -6,6 +6,9 @@
 
 # Goals
 
+**Stretch**
+
+- [ ] Deploy another hello-world app, pulling the proper code into a shared repo and use scripts to glue that all together for optimum reusability.
 
 **Ops**
 
@@ -16,11 +19,11 @@
 - [x] Remove ansible provisioner in favor of packer
 - [x] Deploy with nginx in front
 - [x] make packer aware of the current version in package.json
-- [ ] Manage EBS volumes provisioned for each instance using terraform if necessary to clean up after ourselves
+- [x] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
+- [ ] Make service correctly start up when using terraform to start a service via a packer'd ami
 - [ ] TF a hosted database service (rds psql? nosql?)
-- [ ] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
 - [ ] Consider ELB instead of nginx
-- [ ] TF managed ssh key pairs
+- [ ] TF managed ssh key pairs in core
 
 **Coding**
 
