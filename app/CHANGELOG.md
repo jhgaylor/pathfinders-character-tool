@@ -1,3 +1,7 @@
+# 0.0.5
+
+Change in build process. Testing a version bump.
+
 # 0.0.4
 
 Add basic static site.
