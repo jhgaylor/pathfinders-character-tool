@@ -8,7 +8,7 @@
 #       become_method: "sudo"
 
 # hosts is really just the local instance since it is being called through the provider
-- hosts: tag_App_pathfinder_character_tool
+- hosts: all
   vars:
     nodejs_version: "6.x"
   roles:
@@ -16,7 +16,7 @@
   become: true
   become_method: "sudo"
 
-- hosts: tag_App_pathfinder_character_tool
+- hosts: all
   vars:
     nginx_remove_default_vhost: true
     nginx_vhosts:
@@ -35,7 +35,7 @@
     - geerlingguy.nginx
   become: true
 
-- hosts: tag_App_pathfinder_character_tool
+- hosts: all
   roles:
     - node_app
   become: true
