@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # install some python stuff for ssl
-apt-get install libffi-dev libssl-dev python-dev build-essential -y
+apt-get install libffi-dev libssl-dev python-dev python-pip build-essential -y
 
 # Install Ansible repository.
 apt-get -y update && apt-get -y upgrade
