@@ -7,6 +7,7 @@
     "ssh_username": "ubuntu",
     "ssh_keypair_name": "jake-laptop-aws",
     "ssh_private_key_file": "/Users/jake/.ssh/jake-laptop-aws.pem",
+    "iam_instance_profile": "packer",
     "ami_name": "pathfinder-character-tool-{{timestamp}}"
   }],
   "provisioners": [{
