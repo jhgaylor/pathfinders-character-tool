@@ -15,7 +15,7 @@ variable "app_ami_id" {
 }
 
 variable "instance_type" {
-  default = "t2.small"
+  default = "m1.small"
 }
 
 variable "subdomain" {
