@@ -7,11 +7,13 @@
 - [x] Deploy to aws
 - [x] Deploy in a resilient fashion
 - [x] Make a better service that will restart if it dies
-- [ ] Remove ansible provisioner in favor of packer
+- [x] Remove ansible provisioner in favor of packer
 - [x] Deploy with nginx in front
+- [x] make packer aware of the current version in package.json
+- [ ] Manage EBS volumes provisioned for each instance using terraform if necessary to clean up after ourselves
 - [ ] TF a hosted database service (rds psql? nosql?)
 - [ ] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
-- [ ] Consider ELB instead of elb
+- [ ] Consider ELB instead of nginx
 
 **Coding**
 
