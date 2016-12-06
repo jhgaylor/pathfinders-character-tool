@@ -1,3 +1,7 @@
+# 0.0.4
+
+Add basic static site.
+
 # 0.0.3
 
 Add version to health endpoint.
