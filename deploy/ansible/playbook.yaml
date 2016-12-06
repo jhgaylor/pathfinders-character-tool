@@ -1,13 +1,10 @@
-# bootstrap the instances to have python for ansible to run modules
-# - hosts: tag_App_pathfinder_character_tool
-#   gather_facts: false
-#   tasks:
-#     - name: Install Python
-#       raw: "apt-get -y -q install python"
-#       become: true
-#       become_method: "sudo"
-
 # hosts is really just the local instance since it is being called through the provider
+- hosts: all
+  roles:
+    - base
+  become: true
+  become_method: "sudo"
+
 - hosts: all
   vars:
     nodejs_version: "6.x"
@@ -37,7 +34,7 @@
 
 - hosts: all
   roles:
-    - node_app
+    - pathfinder
   become: true
   become_method: "sudo"
 

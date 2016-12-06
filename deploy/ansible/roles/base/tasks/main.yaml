@@ -35,3 +35,9 @@
 - name: "Install awscli"
   pip:
     name: awscli
+    executable: /usr/bin/pip
+
+- name: "Install boto"
+  pip:
+    name: boto
+    executable: /usr/bin/pip
