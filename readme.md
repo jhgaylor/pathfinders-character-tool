@@ -14,6 +14,7 @@
 - [ ] TF a hosted database service (rds psql? nosql?)
 - [ ] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
 - [ ] Consider ELB instead of nginx
+- [ ] TF managed ssh key pairs
 
 **Coding**
 
