@@ -17,3 +17,7 @@ variable "base_ami_id" {
 variable "instance_type" {
   default = "t2.small"
 }
+
+variable "subdomain" {
+  default = "pct"
+}

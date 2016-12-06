@@ -7,5 +7,5 @@ output "pathfinder-character-tool-ssh-example" {
 }
 
 output "pathfinder-character-tool-app-url" {
-  value = "${aws_instance.pathfinder-character-tool.public_dns}:3000"
+  value = "${aws_route53_record.cname-app.fqdn}:3000"
 }
