@@ -7,7 +7,7 @@ output "app-ssh-example" {
 }
 
 output "app-app-url" {
-  value = "${aws_route53_record.cname-app.fqdn}"
+  value = "${join(",", aws_route53_record.cname-app.*.fqdn)}"
 }
 
 output "app-sg-id" {
