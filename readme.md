@@ -14,7 +14,7 @@
 - [ ] Make a node app role
 - [ ] Deploy another hello world app using generalized ansible and terraform code, proving that other node apps are just as easy to deploy
 - [ ] Deploy a java app the same way.
-- [ ] Make PoC HA deploy w/ an elb in front of private subnets
+- [ ] Make PoC HA deploy w/ an elb in front of private subnets & auto scaling group
 
 **Ops**
 
