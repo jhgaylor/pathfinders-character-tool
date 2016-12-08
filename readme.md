@@ -8,8 +8,13 @@
 
 **Stretch**
 
-- [ ] Deploy another hello-world app, pulling the proper code into a shared repo and use scripts to glue that all together for optimum reusability. (make node_app, don't take a shortcut, it's easy enough.)
+- [x] Pull out code for immutable-app into a module
+- [ ] Pull the code for immutable-app into a place where it can be shared
+- [ ] Pull out ansible into a shared repo
+- [ ] Make a node app role
+- [ ] Deploy another hello world app using generalized ansible and terraform code, proving that other node apps are just as easy to deploy
 - [ ] Deploy a java app the same way.
+- [ ] Make PoC HA deploy w/ an elb in front of private subnets
 
 **Ops**
 
@@ -22,9 +27,8 @@
 - [x] make packer aware of the current version in package.json
 - [x] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
 - [x] Make service correctly start up when using terraform to start a service via a packer'd ami
-- [ ] TF managed ssh key pairs in core
+- [x] TF managed ssh key pairs in core
 - [ ] TF a hosted database service (rds psql? nosql?)
-- [ ] Make PoC HA deploy w/ an elb in front of private subnets
 
 **Coding**
 
