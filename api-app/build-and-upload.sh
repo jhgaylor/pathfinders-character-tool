@@ -1,14 +1,16 @@
 #!/bin/sh
 
-APP_NAME="pathfinder-character-tool"
+
+APP_SHORT_NAME="api"
+APP_NAME="pathfinder-character-tool-${APP_SHORT_NAME}"
 SW_RELEASE_BUCKET="jhg-sw-releases"
-SOURCE_DIR="./app"
+SOURCE_DIR="./${APP_SHORT_NAME}-app"
 APP_VERSION=$(node -p -e "require('${SOURCE_DIR}/package.json').version")
 ARTIFACT_FILENAME="${APP_NAME}-${APP_VERSION}.tar.gz"
 ARTIFACT_PATH="./${ARTIFACT_FILENAME}"
 APP_S3_PATH="s3://${SW_RELEASE_BUCKET}/${APP_NAME}/${ARTIFACT_FILENAME}"
 
-if [ ! -e "./deploy/build-and-upload.sh" ]; then
+if [ ! -d "./deploy" ]; then
   echo "Please run this script from the root of the git repo in which this script lives."
   exit 1
 fi
@@ -34,6 +36,6 @@ echo "Finished uploading artifact to ${APP_S3_PATH}"
 rm ${ARTIFACT_PATH}
 echo "Removed the local copy of the artifact."
 
-pushd "./deploy/packer"
-  ./build-ami.sh
-popd
+# pushd "./deploy/packer"
+#   ./build-ami.sh
+# popd
