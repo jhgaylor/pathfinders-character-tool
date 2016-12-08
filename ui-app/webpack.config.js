@@ -2,26 +2,24 @@ const webpack = require('webpack');
 const path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const ui_src_dir = 'src'
 
-const client_src_dir = 'src'
-const entrypoint = 'index.jsx'
-
-module.exports = {
-  entry: path.join(__dirname, client_src_dir, entrypoint),
+const UI = {
+  entry: path.join(__dirname, ui_src_dir, 'index.jsx'),
   output: {
     path: path.join(__dirname, 'dist', 'static'),
     filename: 'js/[hash].js'
   },
   module: {
     loaders: [{
-      test: /\.jsx/,
+      test: /\.jsx$/,
       loader: 'babel-loader',
       query: {
         cacheDirectory: 'babel_cache',
         presets: ['react', 'es2015']
       }
     }, {
-      test: /\.hbs/,
+      test: /\.hbs$/,
       loader: 'handlebars'
     }]
   },
@@ -33,14 +31,9 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new HtmlWebpackPlugin({
       title: 'Pathfinder Character Helper',
-      template: 'src/index.hbs'
+      template: path.join(__dirname, ui_src_dir, 'index.hbs')
     })
-    // new webpack.optimize.UglifyJsPlugin({
-    //   compress: { warnings: false },
-    //   mangle: true,
-    //   sourcemap: true,
-    //   beautify: false,
-    //   dead_code: true
-    // })
   ]
-};
+}
+
+module.exports = [UI];

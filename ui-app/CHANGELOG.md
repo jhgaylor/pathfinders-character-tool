@@ -1,3 +1,7 @@
+# 0.2.0
+
+Split the api from the ui
+
 # 0.1.0
 
 Change in build process. Put app source in src/
