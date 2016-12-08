@@ -16,7 +16,7 @@
 - name: Get ui artifact
   s3:
     bucket: "{{sw_releases_bucket}}"
-    object: "/{{app_name}}-ui/{{app_name}}-ui-{{app_version}}.tar.gz"
+    object: "/{{app_name}}-ui/{{app_name}}-ui-{{ui_version}}.tar.gz"
     dest: "{{ui_artifact_path}}"
     mode: get
 
@@ -31,7 +31,7 @@
 - name: Get api artifact
   s3:
     bucket: "{{sw_releases_bucket}}"
-    object: "/{{app_name}}-api/{{app_name}}-api-{{app_version}}.tar.gz"
+    object: "/{{app_name}}-api/{{app_name}}-api-{{api_version}}.tar.gz"
     dest: "{{api_artifact_path}}"
     mode: get
 
