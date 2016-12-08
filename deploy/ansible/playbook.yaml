@@ -18,7 +18,7 @@
     nginx_remove_default_vhost: true
     nginx_vhosts:
       - listen: "80"
-        server_name: "{{uifqdn}}"
+        server_name: "{{apifqdn}}"
         extra_parameters: |
           location / {
               proxy_pass http://localhost:3000;
@@ -29,7 +29,7 @@
               proxy_cache_bypass $http_upgrade;
           }
       - listen: "80"
-        server_name: "{{apifqdn}}"
+        server_name: "{{uifqdn}}"
         extra_parameters: |
           location / {
               root {{ui_dir}}/dist/static;

@@ -1,7 +1,7 @@
 ---
 api_dir: /opt/{{app_name}}-api
 ui_dir: /opt/{{app_name}}-ui
-api_artifact_path: /tmp/{{app_name}}-api-{{app_version}}.tar.gz
-ui_artifact_path: /tmp/{{app_name}}-ui-{{app_version}}.tar.gz
+api_artifact_path: /tmp/{{app_name}}-api-{{api_version}}.tar.gz
+ui_artifact_path: /tmp/{{app_name}}-ui-{{ui_version}}.tar.gz
 sw_releases_bucket: jhg-sw-releases
 region: us-west-2
