@@ -1,4 +1,4 @@
-var package_info = require('../package.json')
+var package_info = require('./package.json')
 var express = require('express')
 var app = express()
 
