@@ -1,6 +1,6 @@
 #!/bin/sh
 
-apt-get -y update
+apt-get -y update && apt-get -y upgrade
 
 # Install Ansible repository and some python stuff for ssl.
 apt-get -y install software-properties-common

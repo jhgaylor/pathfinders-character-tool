@@ -21,10 +21,10 @@
 - [x] Deploy with nginx in front
 - [x] make packer aware of the current version in package.json
 - [x] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
-- [ ] Make service correctly start up when using terraform to start a service via a packer'd ami
-- [ ] TF a hosted database service (rds psql? nosql?)
-- [ ] Consider ELB instead of nginx
+- [x] Make service correctly start up when using terraform to start a service via a packer'd ami
 - [ ] TF managed ssh key pairs in core
+- [ ] TF a hosted database service (rds psql? nosql?)
+- [ ] Make PoC HA deploy w/ an elb in front of private subnets
 
 **Coding**
 
