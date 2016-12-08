@@ -3,3 +3,7 @@ node_modules/
 plan
 .terraform/
 playbook.retry
+bundle.js
+babel_cache/
+npm-debug.log
+dist/
