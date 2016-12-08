@@ -1,3 +1,7 @@
+# 0.1.0
+
+Change in build process. Put app source in src/
+
 # 0.0.5
 
 Change in build process. Testing a version bump.
