@@ -1,5 +1,5 @@
 resource "aws_instance" "pathfinder-character-tool" {
-  ami                    = "${var.app_ami_id}"
+  ami                    = "${data.aws_ami.pathfinder-character-tool.image_id}"
   count                  = "${var.instance_count}"
   instance_type          = "${var.instance_type}"
   subnet_id              = "${element(data.terraform_remote_state.dev_vpc.public_subnet_ids, 1)}"
@@ -17,4 +17,14 @@ resource "aws_instance" "pathfinder-character-tool" {
     Env  = "development"
     Owner = "jake"
   }
+}
+
+data "aws_ami" "pathfinder-character-tool" {
+  most_recent = true
+  executable_users = ["self"]
+  filter {
+    name = "name"
+    values = ["pathfinder-character-tool*"]
+  }
+  owners = ["self"]
 }

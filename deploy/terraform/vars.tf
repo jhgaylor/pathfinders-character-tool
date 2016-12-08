@@ -23,5 +23,5 @@ variable "subdomain" {
 }
 
 variable "instance_count" {
-  default = 0
+  default = 1
 }

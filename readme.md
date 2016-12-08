@@ -8,7 +8,8 @@
 
 **Stretch**
 
-- [ ] Deploy another hello-world app, pulling the proper code into a shared repo and use scripts to glue that all together for optimum reusability.
+- [ ] Deploy another hello-world app, pulling the proper code into a shared repo and use scripts to glue that all together for optimum reusability. (make node_app, don't take a shortcut, it's easy enough.)
+- [ ] Deploy a java app the same way.
 
 **Ops**
 
