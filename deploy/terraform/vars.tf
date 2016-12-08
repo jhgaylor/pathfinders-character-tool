@@ -6,12 +6,12 @@ variable "aws_region" {
   default = "us-west-2"
 }
 
-variable "key_pair_name" {
-  default = "jake-laptop-aws"
+variable "app_name" {
+  default = "pathfinder-character-tool"
 }
 
-variable "app_ami_id" {
-  default = "ami-4045ed20"
+variable "key_pair_name" {
+  default = "jake-workstation"
 }
 
 variable "instance_type" {
@@ -24,4 +24,8 @@ variable "subdomain" {
 
 variable "instance_count" {
   default = 1
+}
+
+variable "owner" {
+  default = "jake"
 }

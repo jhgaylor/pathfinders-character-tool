@@ -1,12 +1,9 @@
-resource "aws_security_group" "pathfinder-character-tool" {
-  name        = "${data.terraform_remote_state.dev_vpc.vpc_name}-pathfinder-character-tool"
-  description = "For pathfinder-character-tool instances"
-  vpc_id      = "${data.terraform_remote_state.dev_vpc.vpc_id}"
-
-  ingress {
-    from_port  = 80
-    to_port    = 80
-    protocol   = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
+# Note: sg rules are particularly hard to incapsulate within a module because lookup(element(listOfMaps)) fails. it has to be a "flat map" - could hack around it but its ugly
+resource "aws_security_group_rule" "app" {
+  security_group_id = "${module.pathfinder-character-tool.app-sg-id}"
+  type = "ingress"
+  from_port = 80
+  to_port = 80
+  protocol = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
 }
