@@ -22,8 +22,9 @@ variable "instance_count" {
   description = "The number of instances to deploy"
 }
 
-variable "dns_name" {
+variable "dns_names" {
   description = "The route53 name to give it"
+  type = "list"
 }
 
 variable "vpc_id" {}

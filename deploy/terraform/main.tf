@@ -38,7 +38,7 @@ module "pathfinder-character-tool" {
   # things we need to know about the app
   app_name = "${var.app_name}"
   ami_id = "${data.aws_ami.pathfinder-character-tool.image_id}"
-  dns_name = "${var.subdomain}.opslab.xyz."
+  dns_names = ["${var.subdomain}.opslab.xyz.", "api.${var.subdomain}.opslab.xyz."]
   instance_type="${var.instance_type}"
   instance_count="${var.instance_count}"
   security_group_ids = ["${data.terraform_remote_state.dev_vpc.base_security_group_id}"]
