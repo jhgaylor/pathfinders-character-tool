@@ -29,7 +29,7 @@
 - [x] Make service correctly start up when using terraform to start a service via a packer'd ami
 - [x] TF managed ssh key pairs in core
 - [ ] TF a hosted database service (rds psql? nosql?)
-
+- [ ] Use a CDN to deploy the web app
 **Coding**
 
 - [ ] Add ecmascript 2016
