@@ -19,7 +19,7 @@
     "playbook_file": "../ansible/playbook.yaml",
     "playbook_dir": "../ansible",
     "extra_arguments": [ 
-      "--extra-vars \"app_version={{user `app_version`}} app_name=pathfinder-character-tool fqdn=pct.opslab.xyz\""
+      "--extra-vars \"app_version={{user `app_version`}} app_name=pathfinder-character-tool uifqdn=pct.opslab.xyz apifqdn=api.pct.opslab.xyz\""
     ]
   }]
 }
