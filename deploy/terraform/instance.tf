@@ -21,7 +21,6 @@ resource "aws_instance" "pathfinder-character-tool" {
 
 data "aws_ami" "pathfinder-character-tool" {
   most_recent = true
-  executable_users = ["self"]
   filter {
     name = "name"
     values = ["pathfinder-character-tool*"]
