@@ -1,22 +1,45 @@
 ---
 - file:
-    path: "{{app_dir}}"
+    path: "{{api_dir}}"
     state: directory
     owner: ubuntu
     group: ubuntu
     mode: 0744
 
-- name: Get artifact
+- file:
+    path: "{{ui_dir}}"
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: 0744
+
+- name: Get ui artifact
   s3:
     bucket: "{{sw_releases_bucket}}"
-    object: "/{{app_name}}/{{app_name}}-{{app_version}}.tar.gz"
-    dest: "{{artifact_path}}"
+    object: "/{{app_name}}-ui/{{app_name}}-ui-{{app_version}}.tar.gz"
+    dest: "{{ui_artifact_path}}"
     mode: get
 
-- unarchive:
+- name: unarchive ui artifact
+  unarchive:
     remote_src: yes
-    src: "{{artifact_path}}"
-    dest: "{{app_dir}}"
+    src: "{{ui_artifact_path}}"
+    dest: "{{ui_dir}}"
+    owner: ubuntu
+    group: ubuntu
+
+- name: Get api artifact
+  s3:
+    bucket: "{{sw_releases_bucket}}"
+    object: "/{{app_name}}-api/{{app_name}}-api-{{app_version}}.tar.gz"
+    dest: "{{api_artifact_path}}"
+    mode: get
+
+- name: unarchive api artifact
+  unarchive:
+    remote_src: yes
+    src: "{{api_artifact_path}}"
+    dest: "{{api_dir}}"
     owner: ubuntu
     group: ubuntu
 
