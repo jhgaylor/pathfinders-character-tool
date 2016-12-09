@@ -13,3 +13,11 @@ output "app-app-url" {
 output "app-sg-id" {
   value = "${aws_security_group.app.id}"
 }
+
+output "app-az" {
+  value = "${aws_instance.app.availability_zone}"
+}
+
+output "app-instance-id" {
+  value = "${aws_instance.app.id}"
+}

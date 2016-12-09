@@ -29,8 +29,8 @@
 - [x] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
 - [x] Make service correctly start up when using terraform to start a service via a packer'd ami
 - [x] TF managed ssh key pairs in core
-- [ ] TF a hosted database service (rds psql? nosql?)
-- [ ] Use a CDN to deploy the web app
+- [ ] ansible mongodb onto the host
+- [ ] ansible mount the ebs volume for mongodb data
 - [ ] Get a grasp on tar output folders and get to `/opt/pct-ui/static`
 
 **Coding**
