@@ -32,7 +32,7 @@
         server_name: "{{uifqdn}}"
         extra_parameters: |
           location / {
-              root {{ui_dir}}/dist/static;
+              root {{ui_dir}}/ui-app/dist/static;
           }
   roles:
     - geerlingguy.nginx

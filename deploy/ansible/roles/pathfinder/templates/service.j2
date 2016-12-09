@@ -8,4 +8,4 @@ stop on shutdown
 respawn
 
 # Start the process
-exec start-stop-daemon --start --chuid ubuntu --make-pidfile --pidfile {{app_dir}}/node-upstart.pid --exec /usr/bin/node -- {{app_dir}}/app/src/index.js >> /var/log/{{app_name}}.log 2>&1
+exec start-stop-daemon --start --chuid ubuntu --make-pidfile --pidfile {{api_dir}}/node-upstart.pid --exec /usr/bin/node -- {{api_dir}}/api-app/index.js >> /var/log/{{app_name}}.log 2>&1

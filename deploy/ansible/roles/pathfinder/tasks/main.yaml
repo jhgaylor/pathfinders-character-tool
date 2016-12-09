@@ -4,13 +4,13 @@
     state: directory
     owner: ubuntu
     group: ubuntu
-    mode: 0744
+    mode: 0544
 
 - file:
     path: "{{ui_dir}}"
     state: directory
-    owner: ubuntu
-    group: ubuntu
+    owner: www-data
+    group: www-data
     mode: 0744
 
 - name: Get ui artifact
@@ -25,8 +25,8 @@
     remote_src: yes
     src: "{{ui_artifact_path}}"
     dest: "{{ui_dir}}"
-    owner: ubuntu
-    group: ubuntu
+    owner: www-data
+    group: www-data
 
 - name: Get api artifact
   s3:
