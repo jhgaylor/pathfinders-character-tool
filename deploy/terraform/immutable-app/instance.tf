@@ -8,9 +8,8 @@ resource "aws_instance" "app" {
 
   vpc_security_group_ids = ["${concat(aws_security_group.app.*.id, var.security_group_ids)}"]
 
-  # tags = "${merge(map("Name", "lower(var.vpc_name)-var.app_name"), map("App", var.app_name), var.instance_tags)}"
   tags = "${merge(
-    map("Name", "lower(var.vpc_name)-var.app_name"),
+    map("Name", "${lower(var.vpc_name)}-${var.app_name}"),
     map("App", var.app_name),
     var.instance_tags
   )}"
