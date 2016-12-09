@@ -30,6 +30,8 @@
 - [x] TF managed ssh key pairs in core
 - [ ] TF a hosted database service (rds psql? nosql?)
 - [ ] Use a CDN to deploy the web app
+- [ ] Get a grasp on tar output folders and get to `/opt/pct-ui/static`
+
 **Coding**
 
 - [ ] Add ecmascript 2016
