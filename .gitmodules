@@ -2,3 +2,7 @@
 	path = deploy/terraform/modules
 	url = git@github.com:jhgaylor/terraform-modules.git
 	branch = master
+[submodule "deploy/ansible"]
+	path = deploy/ansible
+	url = git@github.com:jhgaylor/ansible-workspace.git
+	branch = master
