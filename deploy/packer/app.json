@@ -11,15 +11,10 @@
     "ami_name": "pathfinder-character-tool-{{timestamp}}"
   }],
   "provisioners": [{
-      "type": "shell",
-      "execute_command": "sudo -S -E bash '{{.Path}}'",
-      "script": "scripts/setup.sh"
-    }, {
-    "type": "ansible-local",
-    "playbook_file": "../ansible/playbook.yaml",
-    "playbook_dir": "../ansible",
-    "extra_arguments": [ 
-      "--extra-vars \"api_version={{user `api_version`}} ui_version={{user `ui_version`}} app_name=pathfinder-character-tool uifqdn=pct.opslab.xyz apifqdn=api.pct.opslab.xyz\""
-    ]
+    "type": "chef-solo",
+    "cookbook_paths": ["../chef/cookbooks", "../chef/vendor/cookbooks"],
+    "environments_path": "../chef/environments",
+    "roles_path": "../chef/roles",
+    "run_list": ["role[pathfinder]"]
   }]
 }
