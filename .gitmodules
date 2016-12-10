@@ -1,0 +1,4 @@
+[submodule "deploy/terraform/modules"]
+	path = deploy/terraform/modules
+	url = git@github.com:jhgaylor/terraform-modules.git
+	branch = master
