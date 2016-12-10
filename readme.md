@@ -12,7 +12,7 @@
 **Stretch**
 
 - [x] Pull out code for immutable-app into a module
-- [ ] Pull the code for immutable-app into a place where it can be shared
+- [x] Pull the code for immutable-app into a place where it can be shared
 - [ ] Pull out ansible into a shared repo
 - [ ] Make a node app role
 - [ ] Deploy another hello world app using generalized ansible and terraform code, proving that other node apps are just as easy to deploy
@@ -31,8 +31,9 @@
 - [x] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
 - [x] Make service correctly start up when using terraform to start a service via a packer'd ami
 - [x] TF managed ssh key pairs in core
-- [ ] ansible mongodb onto the host
-- [ ] ansible mount the ebs volume for mongodb data
+- [ ] convert ansible to chef-solo
+- [ ] chef mongodb onto the host
+- [ ] chef mount the ebs volume for mongodb data
 - [ ] Get a grasp on tar output folders and get to `/opt/pct-ui/static`
 
 **Coding**
