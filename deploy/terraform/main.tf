@@ -27,7 +27,7 @@ data "aws_ami" "pathfinder-character-tool" {
 }
 
 module "pathfinder-character-tool" {
-  source = "./immutable-app"
+  source = "./modules/immutable-app"
 
   # things we need to know about the environment
   vpc_id = "${data.terraform_remote_state.dev_vpc.vpc_id}"
