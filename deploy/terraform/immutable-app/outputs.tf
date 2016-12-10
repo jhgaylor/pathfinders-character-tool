@@ -1,5 +1,5 @@
 output "app-public-dns" {
-  value = "${aws_instance.app.public_dns}"
+  value = ["${aws_instance.app.*.public_dns}"]
 }
 
 output "app-ssh-example" {
