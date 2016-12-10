@@ -1,5 +1,7 @@
 # Process
 
+**First Run**: You need to make sure that you have the git submodule pulled in using `git submodule update --remote`
+
 - Dev on `api-app/` or `ui-app/`
 - from the root of the project, run `./<app>/build-and-upload.sh` which will create the artifact, stuff it onto s3
 - to make a new release (both apps get shipped as a single unit), run `cd ./deploy/package/; ./build-ami.sh`
