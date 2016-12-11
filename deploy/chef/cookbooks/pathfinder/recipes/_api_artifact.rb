@@ -15,13 +15,16 @@ end
 directory target_dir do
   owner 'ubuntu'
   group 'ubuntu'
-  mode '0544'
+  mode '0744'
   action :create
 end
 
 tar_extract artifact_path do
   target_dir target_dir
   creates "#{target_dir}/index.js"
-  tar_flags [ '--strip-components 1' ]
+  tar_flags [ '--strip-components 2' ]
+  user 'ubuntu'
+  group 'ubuntu'
+  mode '0744'
   action :extract_local
 end

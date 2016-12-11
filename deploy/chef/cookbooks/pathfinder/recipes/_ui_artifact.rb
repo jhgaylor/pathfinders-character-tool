@@ -15,12 +15,16 @@ end
 directory target_dir do
   owner 'www-data'
   group 'www-data'
-  mode '0544'
+  mode '0744'
   action :create
 end
 
 tar_extract artifact_path do
   target_dir target_dir
   creates "#{target_dir}/static"
-  tar_flags [ '--strip-components 2' ]
+  tar_flags [ '--strip-components 3' ]
+  user 'www-data'
+  group 'www-data'
+  mode '0744'
+  action :extract_local
 end
