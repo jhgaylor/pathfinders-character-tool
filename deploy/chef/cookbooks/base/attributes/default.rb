@@ -1,9 +1,12 @@
-node.default['awscli']['version'] = '1.11.23'
+default['awscli']['version'] = '1.11.23'
 
-node.default['base']['packages'] = %w{
+default['base']['packages'] = %w{
   libffi-dev
   libssl-dev
   python-dev
   python-pip
   build-essential
 }
+
+default['base']['releases_bucket'] = "jhg-sw-releases"
+default['base']['aws']['region'] = 'us-west-2'
