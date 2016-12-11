@@ -15,7 +15,6 @@ if [ ! -d "./deploy" ]; then
   exit 1
 fi
 
-
 echo "Building App"
 if [ -e "${ARTIFACT_PATH}" ]; then
   rm ${ARTIFACT_PATH}
