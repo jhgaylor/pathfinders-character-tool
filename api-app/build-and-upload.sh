@@ -20,7 +20,7 @@ if [ -e "${ARTIFACT_PATH}" ]; then
   rm ${ARTIFACT_PATH}
 fi
 
-tar -czf ${ARTIFACT_PATH} ${SOURCE_DIR} > /dev/null
+tar -czf ${ARTIFACT_PATH} -C ${SOURCE_DIR} . > /dev/null
 echo "App successfully built"
 ARTIFACT_EXISTS_AWS=$(aws s3 ls ${APP_S3_PATH})
 
