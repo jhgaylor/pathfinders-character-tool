@@ -13,11 +13,12 @@
 
 - [x] Pull out code for immutable-app into a module
 - [x] Pull the code for immutable-app into a place where it can be shared
-- [ ] Pull out ansible into a shared repo
-- [ ] Make a node app role
-- [ ] Deploy another hello world app using generalized ansible and terraform code, proving that other node apps are just as easy to deploy
+- [x] Pull out ansible into a shared repo
+- [ ] Make a node app cookbook
+- [ ] Deploy another hello world app using generalized chef and terraform code, proving that other node apps are just as easy to deploy
 - [ ] Deploy a java app the same way.
 - [ ] Make PoC HA deploy w/ an elb in front of private subnets & auto scaling group
+- [ ] chef RDBMS solution backed by ebs
 
 **Ops**
 
@@ -31,14 +32,13 @@
 - [x] Bring vars like region closer to the tf from the ansible once ansible provider is replaced or upgraded
 - [x] Make service correctly start up when using terraform to start a service via a packer'd ami
 - [x] TF managed ssh key pairs in core
-- [ ] convert ansible to chef-solo
-- [ ] chef mongodb onto the host
-- [ ] chef mount the ebs volume for mongodb data
-- [ ] Get a grasp on tar output folders and get to `/opt/pct-ui/static`
+- [x] convert ansible to chef-solo
+- [ ] chef mongodb + ebs solution
+- [x] Get a grasp on tar output folders and get to `/opt/pct-ui/static` (this was `--strip-components x`)
 
 **Coding**
 
-- [ ] Add ecmascript 2016
-- [ ] Add react support compiled on the server
+- [x] Add ecmascript 2016
+- [x] bundle js so jsx isn't shipped to the browser
 - [ ] Add a database
 - [ ] Migration plan for database schemas
