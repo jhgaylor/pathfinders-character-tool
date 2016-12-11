@@ -1,10 +1,10 @@
-template "#{node['nginx']['dir']}/sites-available/ui.conf" do
+template "#{node['nginx']['dir']}/sites-available/ui" do
   source 'pathfinder-ui.nginx.conf.erb'
   owner 'root'
   group 'root'
   mode '0644'
   variables({
-    :ui_dir => "/opt/#{node['pathfinder']}['ui']['name']}"  
+    :ui_dir => "/opt/#{node['pathfinder']['ui']['name']}"  
   })
 end
 
@@ -13,6 +13,6 @@ service 'nginx' do
   action   :enable
 end
 
-# nginx_site 'ui' do
-#   enable true
-# end
+nginx_site 'ui' do
+  enable true
+end

@@ -1,4 +1,4 @@
-template "#{node['nginx']['dir']}/sites-available/api.conf" do
+template "#{node['nginx']['dir']}/sites-available/api" do
   source 'pathfinder-api.nginx.conf.erb'
   owner 'root'
   group 'root'
@@ -10,6 +10,6 @@ service 'nginx' do
   action   :enable
 end
 
-# nginx_site 'api' do
-#   enable true
-# end
+nginx_site 'api' do
+  enable true
+end
