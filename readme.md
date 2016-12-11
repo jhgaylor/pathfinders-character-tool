@@ -9,16 +9,21 @@
 
 # Goals
 
-**Stretch**
-
-- [x] Pull out code for immutable-app into a module
-- [x] Pull the code for immutable-app into a place where it can be shared
+**Stretch CMDB**
 - [x] Pull out ansible into a shared repo
 - [ ] Make a node app cookbook
+- [ ] Make a static site cookbook
 - [ ] Deploy another hello world app using generalized chef and terraform code, proving that other node apps are just as easy to deploy
+- [ ] Make a java (spring boot?) app cookbook
 - [ ] Deploy a java app the same way.
-- [ ] Make PoC HA deploy w/ an elb in front of private subnets & auto scaling group
 - [ ] chef RDBMS solution backed by ebs
+
+**Stretch Infrastructure**
+- [x] Pull out code for immutable-app into a module
+- [x] Pull the code for immutable-app into a place where it can be shared
+- [ ] Use ASG not aws_instance
+- [ ] Make PoC HA deploy w/ an elb in front of private subnets
+- [ ] OpenVPN to my laptop to give access to private subnets
 
 **Ops**
 
@@ -33,8 +38,8 @@
 - [x] Make service correctly start up when using terraform to start a service via a packer'd ami
 - [x] TF managed ssh key pairs in core
 - [x] convert ansible to chef-solo
-- [ ] chef mongodb + ebs solution
 - [x] Get a grasp on tar output folders and get to `/opt/pct-ui/static` (this was `--strip-components x`)
+- [ ] chef mongodb + ebs solution
 
 **Coding**
 
