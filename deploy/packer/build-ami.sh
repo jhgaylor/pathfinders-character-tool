@@ -13,4 +13,4 @@ pushd ../chef/cookbooks
 popd
 
 # packer build -var "api_version=${API_VERSION}" -var "ui_version=${UI_VERSION}" app.json
-# packer build app.json
+packer build app.json

@@ -2,7 +2,7 @@
 
 
 APP_SHORT_NAME="api"
-APP_NAME="pathfinder-character-tool-${APP_SHORT_NAME}"
+APP_NAME="pathfinder-${APP_SHORT_NAME}"
 SW_RELEASE_BUCKET="jhg-sw-releases"
 SOURCE_DIR="./${APP_SHORT_NAME}-app"
 APP_VERSION=$(node -p -e "require('${SOURCE_DIR}/package.json').version")

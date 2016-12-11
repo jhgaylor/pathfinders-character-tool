@@ -4,7 +4,7 @@ if [ -z "$1" ]; then
   echo "please set an app name (api or ui)"
 fi
 
-APP_NAME="pathfinder-character-tool-ui"
+APP_NAME="pathfinder-ui"
 SW_RELEASE_BUCKET="jhg-sw-releases"
 SOURCE_DIR="./ui-app"
 APP_VERSION=$(node -p -e "require('${SOURCE_DIR}/package.json').version")
