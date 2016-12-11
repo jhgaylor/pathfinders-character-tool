@@ -13,6 +13,7 @@
 - [x] Pull out ansible into a shared repo
 - [ ] Make a node app cookbook
 - [ ] Make a static site cookbook
+- [ ] Deploy pathfinder using new common cookbooks
 - [ ] Deploy another hello world app using generalized chef and terraform code, proving that other node apps are just as easy to deploy
 - [ ] Make a java (spring boot?) app cookbook
 - [ ] Deploy a java app the same way.
