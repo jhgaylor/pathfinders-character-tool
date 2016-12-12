@@ -11,7 +11,7 @@ variable "app_name" {
 }
 
 variable "key_pair_name" {
-  default = "jake-workstation"
+  default = "jake-laptop-aws"
 }
 
 variable "instance_type" {
